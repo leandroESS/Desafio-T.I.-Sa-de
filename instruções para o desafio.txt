@@ -1,0 +1,53 @@
+Um dos grandes desafios no setor de dados é a resolução de ticket internos e externos, esses tickets geralmente são bem desafiadores, segue a baixo uma lista de tickets para você resolver e se divertir:
+
+ticket #1:
+    Me chamo João e sou administrador da clínica sempre saúde e gostaria da ajuda de vocês para bonificar meu médicos de forma justa, onde quem mais atendeu vai receber uma porcentagem maior da bonificação, para isso, gostaria de solicitar o ranking dos médicos que mais tiveram agendamentos atendidos no ano de 2023.
+
+ticket #2:
+    Pensando em aumentar nosso quadro médico com foco em aumentar nosso faturamento anual, solicitamos uma ajuda de vocês para que nos mandem o ranking dos procedimentos que mais geraram dinheiro para a nossa clínica no ano de 2023
+
+ticket #3:
+    Boa tarde, estamos em processo de planejamento estratégico para o próximo ano e pretendemos fazer alguns comparativos da parte financeira deste ano com a do ano, para isso vamos precisar 
+    de uma tabela contendo as informações de quanto a gente ganhou ou deixou de ganhar em receita/dinheiro em cada mês de 2023.
+ 
+
+ticket #4:
+    Pensando em melhor os fluxos de agendamentos da clínica e a experiência dos pacientes, precisamos das seguintes informações:
+         taxa de cancelamento média para cada médico 
+         Média de tempo entre a marcação e o cancelamento para cada médico
+
+ticket #5
+    A equipe de marketing lançará diariamente um informe sobre as nossas OKRs anuais e uma das informações mais importantes são o número total de pacientes e agendamentos atendidos. Para isso, teremos que criar uma nova tabela chamada okrs e incluir diariamente (trigger) essas informações. Além disso precisaremos incluir informações retroativas para podermos comparar o passado com o presente momento.
+        Ex: hoje tivemos 50 agendamentos atendidos, ao finalizar o dia 00:00:00 devemos incluir automaticamente essa informação na tabela de okrs.
+        obs: baseado na tabela de agendamentos deverá ser feito o carregamentos de todos os quantitativos de agendamentos anteriores de uma vez só. Ex: ano passado no dia 01/01 foram tivemos 10 agendamentos atendidos, no dia 02 tivemos 20 e assim sucessivamente.
+
+ticket #6.1
+    As grandes seguradoras de saúde que atendemos cada vez mais nos solicitam dados para que elas analisem quanto de receitas elas estão ganhando e deixando de ganhar. Tendo em vista essa demanda, iremos criar um novo relatório que contenha as seguinte informações: data, quantidade e tipo. 
+
+    Ex: no dia 01/01/2023, uma segunda-feira o médico 1 possuia 15 slotes da sua agenda disponíveis para agendamentos 8:00, 8:30, 9:00 ... ao fim do dia 6 agendamentos foram atendidos, 2 desmarcados e 2 faltaram os outros 5 horários não foram ocupados.
+
+    para o último exemplo precisariamos inserir as seguintes linhas na tabela
+
+    data            quantidade          tipo                    idUsuario
+    01/01/2023      6                   atendidos               1
+    01/01/2023      4                   no-show                 1
+    01/01/2023      5                   horários restantes      1
+
+    horários restantes: horários livres que os médicos poderiam ter atendido alguém mais não houve agendamento
+    no-show: falta, desmarcação, agendamentos marcados e não atendidos.
+    atendidos: agendamentos que de fato foram atendidos
+
+    obs: considere que todos os médicos possuem 20 horários disponíveis todos os dias
+    obs2: considere que por padrão os médicos não atenderam nos feriados nacionais, caso exista algum atendimento foi uma emergência e não precisará ser contabilizado.
+
+ticket #6.2:
+    Tendo em vista que já possuímos o conhecimento de como calcular o no-show e os atendidos, iremos agora calcular o quanto ganhamos e deixamos de ganhar. Nesse novo ticket foi solicitado um relatório com as seguintes colunas: ano, mês, tipo, valor.
+
+    dica: os valores dos agendamentos são baseados nos procedimentos realizados.
+
+
+
+
+ obs: em anexo seguem os arquivos .sql para a resolução desse desafio, lembrando que logo mais poderemos ter uma reunião mais técnica para avaliar como os tickets foram solucionados e teremos algumas perguntas técnicas.
+
+ obs2: antes de resolver os tickets elabore o Modelo Entidade Relacionamento do banco, ele contará para o desafio e servirá de auxílio para as resoluções.
